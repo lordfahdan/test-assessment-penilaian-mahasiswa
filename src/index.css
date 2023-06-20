@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial";
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 26px;
+  text-align: center;
+  margin: 16px 0 18px;
+}
+h2 {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+/* Table style
+================================== */
+.table {
+  margin: 0 auto;
+  padding: 2rem 0rem 0rem 0rem;
+  overflow: auto;
+}
+.table-head, .table-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.table-head .table-cell {
+  outline: 1px solid #fff;
+  background: transparent;
+}
+.table-head h2 {
+  padding: 0 6px;
+}
+.table-content {
+  margin: 8px 0;
+  box-shadow: 0 0 2px 1px rgb(193, 193, 193);
+  border-radius: 2px;
+}
+.table-cell {
+  flex-grow: 1;
+  width: 100%;
+  padding: 6px 10px;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+.table-head .table-cell:first-child {
+  outline: 1px solid #fff;
+  background: transparent;
+}
+@media only screen and (max-width: 768px) {
+  .table-head .table-cell:first-child {
+    display: none;
+  }
+}
+
+/* Table columns
+================================== */
+.table-cell {
+  width: calc(19% - 1px);
+}
+.table-cell:first-of-type {
+  width: calc(24% - 1px)
+}
+.table-cell.cell-feature {
+  text-align: left;
+}
+@media only screen and (max-width: 768px) {
+  .table-cell.cell-feature {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Select style
+================================== */
+select {
+  width: 100%;
+  outline: none;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+/* Profile style
+================================== */
+.profile { 
+  display: flex;
+  align-items: center;
+}
+.profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.profile h2 {
+  text-transform: capitalize;
+}
+
+/** Button style
+================================== */
+.download {
+  display: block;
+  margin-left: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background: #202020;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
