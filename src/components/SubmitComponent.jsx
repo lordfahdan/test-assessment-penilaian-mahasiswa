@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import { PenilaianContext } from "../context/PenilaianContext";
 import createFileInBrowser from "../utils/createFileInBrowser";
@@ -6,8 +6,10 @@ import { convertDataToExpect } from "../utils/convertDataToExpect";
 
 export const SubmitComponent = () => {
   const {state} = useContext(PenilaianContext)
+  const [load, setLoad] = useState(false)
   
   const downloadFile = (myData) => {
+    setLoad(true)
     const result = convertDataToExpect(myData)
 
     toast.loading("File creating...");
@@ -27,11 +29,16 @@ export const SubmitComponent = () => {
       // clean up "a" element & remove ObjectURL
       document.body.removeChild(link);
       URL.revokeObjectURL(href);
+      setLoad(false)
     });
   };
 
   return (
-    <button className="download" onClick={() => downloadFile(state)}>
+    <button className="download" onClick={() => {
+      if(load === true) return;
+      
+      downloadFile(state)
+    }}>
       Download
     </button>
   );
